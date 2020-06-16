@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.email.dao.ResumeEmailMapper">
+    <resultMap id="resumemaill" type="ResumeEmaillPojo">
+        <result property="id" column="id"/>
+        <result property="education" column="education"/>
+        <result property="position" column="position"/>
+        <result property="rusumeName" column="rusumeName"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="resumemaill">
+        select * from resumemaill
+    </select>
+    <insert id="installnewResume" parameterType="ResumeEmaillPojo">
+        insert into resumemaill (name,education,position,rusumeName) values (#{name},#{education},#{position},#{rusumeName})
+    </insert>
+</mapper>
