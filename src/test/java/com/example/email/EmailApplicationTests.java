@@ -39,6 +39,14 @@ class EmailApplicationTests {
         }
     }
     @Test
+    void contextLoads3() {
+        List<ResumeEmaillPojo> education = iResumeEmaillService.findeducation("大专");
+
+        for (int i = 0; i < education.size(); i++) {
+            System.out.println(education.get(i).toString());
+        }
+    }
+    @Test
     void testEmail() throws Exception {
         iEmailService.readEmail();
     }

@@ -13,6 +13,11 @@
     <select id="findAll" resultMap="resumemaill">
         select * from resumemaill
     </select>
+
+    <select id="findeducation" parameterType="string" resultMap="resumemaill">
+        select * from resumemaill where education=#{education}
+    </select>
+
     <insert id="installnewResume" parameterType="ResumeEmaillPojo">
         insert into resumemaill (name,education,position,rusumeName) values (#{name},#{education},#{position},#{rusumeName})
     </insert>

@@ -26,7 +26,12 @@ public class ResumeEmaillServiceimpl implements IResumeEmaillService {
 
     @Override
     public List<ResumeEmaillPojo> findeducation(String education) {
-        return null;
+        if (!education.equals("")&&education!=null){
+            List<ResumeEmaillPojo> findeducation = resumeEmailMapper.findeducation(education);
+            return findeducation;
+        }else {
+            return null;
+        }
     }
 
     @Override
